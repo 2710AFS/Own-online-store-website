@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiShop — Одежда, Техника, Книги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Multi<span>Shop</span></div>
+            <nav class="nav">
+                <a href="#catalog">Каталог</a>
+                <a href="#feedback">Контакты</a>
+            </nav>
+            <button id="theme-toggle" class="btn-theme" aria-label="Переключить тему">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Главный экран (Hero) -->
+        <section class="hero">
+            <div class="container hero-container">
+                <h1>Все товары в одном месте</h1>
+                <p>Выбирайте лучшее: от стильной одежды и гаджетов до захватывающих книг.</p>
+                <a href="#catalog" class="btn">Перейти в каталог</a>
+            </div>
+        </section>
+
+        <!-- Блок каталога товаров с разделением на секции -->
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2>Наш ассортимент</h2>
+                
+                <!-- РАЗДЕЛ 1: ОДЕЖДА -->
+                <div class="catalog-section" id="section-clothes">
+                    <h3 class="section-title">👕 Одежда на выбор </h3>
+                    <div class="product-grid" id="grid-clothes">
+                        <!-- Карточка 1: Одежда -->
+                        <article class="product-card" data-category="clothes">
+                            <div class="product-image" style="background-image: url('https://cs2.livemaster.ru/storage/0a/95/bd0ea009799a020d7366aa3ba1o4--odezhda-palto-oversajz-iz-italyanskoj-shersti-kaliostro.jpg');"></div>
+                            <div class="product-info">
+                                <span class="category-badge">Одежда</span>
+                                <h3>Пальто оверсайз</h3>
+                                <div class="product-footer">
+                                    <span class="price">8 900 ₽</span>
+                                    <button class="btn-buy">Купить</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- РАЗДЕЛ 2: ТЕХНИКА -->
+                <div class="catalog-section" id="section-tech">
+                    <h3 class="section-title">💻 Техника на выбор </h3>
+                    <div class="product-grid" id="grid-tech">
+                        <!-- Карточка 2: Техника -->
+                        <article class="product-card" data-category="tech">
+                            <div class="product-image" style="background-image: url('https://avatars.mds.yandex.net/get-mpic/13230222/2a000001920f2172fd53d30539bfde2765ba/orig');"></div>
+                            <div class="product-info">
+                                <span class="category-badge">Техника</span>
+                                <h3>Беспроводные наушники</h3>
+                                <div class="product-footer">
+                                    <span class="price">5 500 ₽</span>
+                                    <button class="btn-buy">Купить</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- РАЗДЕЛ 3: КНИГИ -->
+                <div class="catalog-section" id="section-books">
+                    <h3 class="section-title">📚 Книга на выбор </h3>
+                    <div class="product-grid" id="grid-books">
+                        <!-- Карточка 3: Книги -->
+                        <article class="product-card" data-category="books">
+                            <div class="product-image" style="background-image: url('https://habrastorage.org/r/w1560/getpro/habr/upload_files/2bc/22c/265/2bc22c265b8c7c4f9033170f8243d205.jpg');"></div>
+                            <div class="product-info">
+                                <span class="category-badge">Книги</span>
+                                <h3>Книга «Путь IT-специалиста»</h3>
+                                <div class="product-footer">
+                                    <span class="price">850 ₽</span>
+                                    <button class="btn-buy">Купить</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Кнопка динамической подгрузки -->
+                <div class="catalog-action">
+                    <button id="load-more" class="btn">Показать еще</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма обратной связи -->
+        <section id="feedback" class="feedback">
+            <div class="container feedback-container">
+                <h2>Остались вопросы?</h2>
+                <p>Заполните форму, и мы свяжемся с вами для консультации по товарам.</p>
+                <form id="contact-form" class="form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required minlength="2" placeholder="Дмитрий">
+                        <span class="error-msg" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Электронная почта (Email)</label>
+                        <input type="email" id="email" required placeholder="client@example.com">
+                        <span class="error-msg" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ваше сообщение</label>
+                        <textarea id="message" rows="4" placeholder="Меня интересует доставка техники..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить запрос</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 MultiShop Marketplace. Все права защищены.</p>
+            <div class="socials">
+                <a href="#">Telegram</a>
+                <a href="#">VKontakte</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

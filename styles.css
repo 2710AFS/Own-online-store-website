@@ -1,0 +1,289 @@
+/* Переменные для легкого переключения тем */
+[data-theme="dark"] {
+    --bg-primary: #121214;
+    --bg-surface: #1e1e24;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a5;
+    --accent: #20bf6b;
+    --accent-hover: #26de81;
+    --border: #2f2f38;
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+    --bg-primary: #f8f9fa;
+    --bg-surface: #ffffff;
+    --text-main: #2f3542;
+    --text-muted: #747d8c;
+    --accent: #0ea5e9;
+    --accent-hover: #0284c7;
+    --border: #ced6e0;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Сброс стилей (Reset) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Шапка сайта (Flexbox) */
+.header {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-right: 25px;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Главный экран */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://bigfoto.name/photo/uploads/posts/2023-10/1697527001_bigfoto-name-p-gipermarket-tekhniki-3.jpg') no-repeat center/cover;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Каталог и разделы */
+.catalog {
+    padding: 60px 0;
+}
+
+.catalog h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+/* Стилизация подсекций товаров (Новые правила) */
+.catalog-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Сетка Grid для карточек */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.product-image {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category-badge {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn-buy {
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-buy:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.catalog-action {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Форма обратной связи */
+.feedback {
+    background-color: var(--bg-surface);
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+}
+
+.feedback-container {
+    max-width: 550px;
+}
+
+.feedback h2 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: 2px solid var(--accent);
+}
+
+.error-msg {
+    color: #ff4d4f;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Подвал */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+    color: var(--text-muted);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.socials a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.socials a:hover {
+    color: var(--accent);
+}
